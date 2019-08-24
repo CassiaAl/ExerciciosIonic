@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>news</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+  
+      
+        <ion-card-content>
+          <br>
+          <ion-input type="text"[(ngModel)] = "titulo">Título</ion-input>
+          <ion-input type="text"[(ngModel)] = "subtitulo">Subtítulo</ion-input>
+          <ion-input type="text"[(ngModel)] = "imagem">Imagem </ion-input>
+          <br>
+
+          
+          <button (click)="enviaTitulo(titulo, subtitulo, imagem)">Cadastrar</button>
+
+        </ion-card-content>
+        
+      </ion-card>
+
+      <ion-list>
+          <ion-item *ngFor="let item of items">
+           
+              <ion-card class="welcome-card">
+                  <img [src]="item.imagem" alt="" />
+                  <ion-card-header>
+                    <ion-card-subtitle>{{item.subtitulo}}</ion-card-subtitle>
+                    <ion-card-title>{{item.titulo}}</ion-card-title>
+                  </ion-card-header>
+                </ion-card>
+                <ion-button (click)="apagar(item)"> </ion-button>
+
+          </ion-item>
+      </ion-list>
+
+</ion-content>
